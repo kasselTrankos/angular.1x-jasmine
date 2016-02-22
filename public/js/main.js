@@ -5,7 +5,8 @@ var AppController = function($scope){
 module.exports = AppController;
 
 },{}],2:[function(require,module,exports){
-var app = angular.module('ats.app');
+'use strict';
+var app = angular.module('ats.app', []);
 app.controller('AppCtrl', ['$scope', require('./controller/AppController')]);
 
 },{"./controller/AppController":1}]},{},[2])
