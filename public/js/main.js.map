@@ -6,12 +6,12 @@
     "app/main.js"
   ],
   "names": [],
-  "mappings": "AAAA;ACAA;AACA;AACA;AACA;AACA;;ACJA;AACA;AACA;AACA",
+  "mappings": "AAAA;ACAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;;ACtBA;AACA;AACA;AACA",
   "file": "generated.js",
   "sourceRoot": "",
   "sourcesContent": [
     "(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require==\"function\"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error(\"Cannot find module '\"+o+\"'\");throw f.code=\"MODULE_NOT_FOUND\",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require==\"function\"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})",
-    "var AppController = function($scope){\n\n}\nmodule.exports = AppController;\n",
+    "var AppController = function($scope){\n  var vm  =this;\n  vm.friends = [\n    {name:'John', age:25, gender:'boy'},\n    {name:'Jessie', age:30, gender:'girl'},\n    {name:'Johanna', age:28, gender:'girl'},\n    {name:'Joy', age:15, gender:'girl'},\n    {name:'Mary', age:28, gender:'girl'},\n    {name:'Peter', age:95, gender:'boy'},\n    {name:'Sebastian', age:50, gender:'boy'},\n    {name:'Erika', age:27, gender:'girl'},\n    {name:'Patrick', age:40, gender:'boy'},\n    {name:'Samantha', age:60, gender:'girl'}\n  ];\n  vm.init= function(){\n    vm.soCaller(1);\n  }\n  vm.soCaller = function(value){\n    console.log(value);\n  }\n}\nmodule.exports = AppController;\n",
     "'use strict';\nvar app = angular.module('ats.app', []);\napp.controller('AppCtrl', ['$scope', require('./controller/AppController')]);\n"
   ]
 }

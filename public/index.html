@@ -1,11 +1,24 @@
 <html>
   <head>
     <title>jasmine + angular js</title>
+    <link rel="stylesheet" href="/third_parthy/bootstrap/dist/css/bootstrap.css" type="text/css" media="screen"title="no title" charset="utf-8">
     <script src="/third_parthy/angular/angular.js"></script>
 
   </head>
   <body>
-    <div id="wrapper" ng-app="ats.app">
+
+    <div id="wrapper" ng-app="ats.app" ng-controller="AppCtrl as vm">
+      <div class="page-header">
+        <h1>jasmine</h1>
+      </div>
+      <ul class="example-animate-container">
+        <li class="animate-repeat" ng-repeat="friend in vm.friends | filter:q as results">
+          [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+        </li>
+        <li class="animate-repeat" ng-if="results.length == 0">
+          <strong>No results found...</strong>
+        </li>
+      </ul>
     </div>
 
     <script src="js/main.js"></script>

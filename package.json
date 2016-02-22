@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "server": "node server",
-    "browserify":"node_modules/.bin/watchify app/main.js -o 'node_modules/.bin/exorcist public/js/main.js.map > public/js/main.js' -d -v",
+    "browserify": "node_modules/.bin/watchify app/main.js -o 'node_modules/.bin/exorcist public/js/main.js.map > public/js/main.js' -d -v",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node_modules/.bin/concurrently \"npm run server\" \"npm run browserify\""
+    "start": "node_modules/.bin/concurrently \"npm run server\" \"npm run browserify\""
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "browserify": "^13.0.0",
     "concurrently": "^2.0.0",
     "exorcist": "^0.4.0",
+    "jasmine-spec-reporter": "^2.4.0",
     "watchify": "^3.7.0"
   }
 }
