@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "node server",
+    "browserify":"node_modules/.bin/watchify app/main.js -o 'node_modules/.bin/exorcist public/js/main.js.map > public/js/main.js' -d -v",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node_modules/.bin/concurrently \"npm run server\" \"npm run browserify\""
   },
   "repository": {
     "type": "git",
@@ -19,5 +22,11 @@
   "dependencies": {
     "express": "^4.13.4",
     "jasmine": "^2.4.1"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "concurrently": "^2.0.0",
+    "exorcist": "^0.4.0",
+    "watchify": "^3.7.0"
   }
 }
