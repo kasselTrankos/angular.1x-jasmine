@@ -1,5 +1,6 @@
 var AppController = function($scope){
-  var vm  =this;
+  var vm  = this;
+  vm.isCalled = false;
   vm.friends = [
     {name:'John', age:25, gender:'boy'},
     {name:'Jessie', age:30, gender:'girl'},
@@ -16,7 +17,10 @@ var AppController = function($scope){
     vm.soCaller(1);
   }
   vm.soCaller = function(value){
-    console.log(value);
+    vm.isCalled = true;
+    console.log('caller', vm.isCalled);
+    return false;
+
   }
 }
 module.exports = AppController;
