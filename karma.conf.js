@@ -20,12 +20,13 @@ module.exports = function(config) {
           'karma-phantomjs-launcher',
           'karma-jasmine',
           'karma-coverage',
-          'karma-browserify'
+          'karma-browserify',
+          'karma-browserify-preprocessor'
         ],
 
         preprocessors: {
           //'app/**/*.js': ['coverage', 'browserify'],
-          'app/main.js':['browserify'],
+          'app/main.js':['coverage', 'browserify'],
           'test/*':['browserify']
         },
 
@@ -45,7 +46,7 @@ module.exports = function(config) {
 
         autoWatch: true,
 
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
         singleRun: false,
         coverageReporter: {
