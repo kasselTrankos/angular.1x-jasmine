@@ -1,3 +1,4 @@
+
 module.exports = function(config) {
     config.set({
 
@@ -23,16 +24,18 @@ module.exports = function(config) {
         ],
 
         preprocessors: {
-          'app/main.js':['browserify']
-
+          //'app/**/*.js': ['coverage', 'browserify'],
+          'app/main.js':['browserify'],
+          'test/*':['browserify']
         },
 
         browserify: {
           watch:true,
-            debug: true
+          debug: true,
+          transform: ['browserify-istanbul']
         },
 
-        reporters: ['dots', 'progress', 'junit', 'growl', 'coverage'],
+        reporters: ['progress','coverage'],
 
         port: 9876,
 
@@ -42,8 +45,16 @@ module.exports = function(config) {
 
         autoWatch: true,
 
-        browsers: ['Chrome'],
+        browsers: ['PhantomJS'],
 
-        singleRun: false
+        singleRun: false,
+        coverageReporter: {
+          // specify a common output directory
+          dir: 'coverage',
+          reporters: [
+            // reporters not supporting the `file` property
+            { type: 'html', subdir: 'report-html' }
+          ]
+        }
     });
 };
