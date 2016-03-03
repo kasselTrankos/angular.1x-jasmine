@@ -18,9 +18,11 @@ var AppController = function($scope){
   }
   vm.soCaller = function(value){
     vm.isCalled = true;
-    console.log('caller', vm.isCalled);
     return false;
-
+  }
+  vm.makeTest = function(value){
+    var test = 10 + +value;
+    return test;
   }
 }
 module.exports = AppController;

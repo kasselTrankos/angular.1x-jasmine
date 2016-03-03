@@ -38,7 +38,10 @@ describe("App Controller", function() {
     expect(controller.soCaller(1)).toBe(1);
     expect(controller.isCalled).toBe(true);
   });
-
+  it('makeTest given 20 return 30', function(){
+    var r = controller.makeTest(20);
+    expect(r).toEqual(30);
+  });
   it("controller is defined", function() {
     expect(controller).toBeDefined();
   });
