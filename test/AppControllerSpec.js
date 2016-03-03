@@ -26,5 +26,18 @@ describe("App Controller", function() {
     var r = controller.soCaller(2);
     expect(r).toBe(142);
   });
+  
+  it('record when obj.name="juan" is juan', function(){
+    var r = controller.record({name:'juan'});
+    expect(r).toBe('juan');
+  });
+  it('record when obj.year=100 is 322', function(){
+    var r = controller.record({year:100});
+    expect(r).toBe(322);
+  });
+  it('record no obj return same', function(){
+    var r = controller.record(0);
+    expect(r).toBe(0);
+  });
 });
 ///

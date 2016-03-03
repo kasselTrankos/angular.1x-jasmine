@@ -24,5 +24,11 @@ var AppController = function($scope){
     var test = 10 + +value;
     return test;
   }
+  vm.record = function(obj){
+    
+    if(obj.name) return obj.name;
+    if(obj.year) return obj.year + +222;
+    return obj;
+  }
 }
 module.exports = AppController;
