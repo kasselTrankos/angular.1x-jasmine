@@ -10,8 +10,11 @@ jasmine.loadConfig({
         'requests/**/*[sS]pec.js',
         'utils/**/*[sS]pec.js'
     ],
-    helpers: [
-        'helpers/**/*.js'
+
+    files: [
+      "bower_components/angular/angular.min.js",
+      "bower_components/angular-mocks/angular-mocks.js",
+      "app/main.js"
     ]
 });
 var CustomReporter = require('jasmine-spec-reporter');

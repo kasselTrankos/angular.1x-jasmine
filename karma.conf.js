@@ -16,6 +16,7 @@ module.exports = function(config) {
         exclude: [
         ],
         plugins : [
+          'karma-html-reporter',
           'karma-chrome-launcher',
           'karma-phantomjs-launcher',
           'karma-jasmine',
@@ -27,16 +28,29 @@ module.exports = function(config) {
         preprocessors: {
           //'app/**/*.js': ['coverage', 'browserify'],
           'app/main.js':['coverage', 'browserify'],
-          'test/*':['browserify']
+          'test/*.js':['browserify']
         },
+        htmlReporter: {
+          outputDir: 'karma_html', // where to put the reports
+          templatePath: null, // set if you moved jasmine_template.html
+          focusOnFailures: true, // reports show failures on start
+          namedFiles: false, // name files instead of creating sub-directories
+          pageTitle: null, // page title for reports; browser info by default
+          urlFriendlyName: false, // simply replaces spaces with _ for files/dirs
+          reportName: 'report-summary-filename', // report summary filename; browser info by default
 
+
+          // experimental
+          preserveDescribeNesting: false, // folded suites stay folded
+          foldAll: false, // reports start folded (only with preserveDescribeNesting)
+        },
         browserify: {
           watch:true,
           debug: true,
           transform: ['browserify-istanbul']
         },
 
-        reporters: ['progress','coverage'],
+        reporters: ['progress', 'html'],
 
         port: 9876,
 
@@ -48,7 +62,7 @@ module.exports = function(config) {
 
         browsers: ['Chrome'],
 
-        singleRun: false,
+        singleRun: true,
         coverageReporter: {
           // specify a common output directory
           dir: 'coverage',

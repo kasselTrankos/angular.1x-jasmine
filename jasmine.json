@@ -7,7 +7,9 @@
   ],
 
   "helpers": [
-    "bower/**/*.js"
+    "bower_components/angular/angular.min.js",
+    "bower_components/angular-mocks/angular-mocks.js",
+    "app/main.js"
   ],
 
   "stopSpecOnExpectationFailure": false,
