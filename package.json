@@ -6,7 +6,7 @@
   "scripts": {
     "server": "node server",
     "browserify": "node_modules/.bin/watchify app/main.js -o 'node_modules/.bin/exorcist public/js/main.js.map > public/js/main.js' -d -v",
-    "test": "node_modules/.bin/jasmine JASMINE_CONFIG_PATH=jasmine.json",
+    "test": "node_modules/.bin/karma start karma.conf",
     "start": "node_modules/.bin/concurrently \"npm run server\" \"npm run browserify\""
   },
   "repository": {
