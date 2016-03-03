@@ -6,7 +6,7 @@
   "scripts": {
     "server": "node server",
     "browserify": "node_modules/.bin/watchify app/main.js -o 'node_modules/.bin/exorcist public/js/main.js.map > public/js/main.js' -d -v",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node_modules/.bin/jasmine JASMINE_CONFIG_PATH=jasmine.json",
     "start": "node_modules/.bin/concurrently \"npm run server\" \"npm run browserify\""
   },
   "repository": {
@@ -30,12 +30,14 @@
     "concurrently": "^2.0.0",
     "exorcist": "^0.4.0",
     "jasmine-spec-reporter": "^2.4.0",
+    "jscoverage": "^0.6.0",
     "karma-browserify": "^5.0.2",
     "karma-browserify-preprocessor": "^0.2.0",
     "karma-chrome-launcher": "^0.2.2",
     "karma-coverage": "^0.5.3",
     "karma-ng-html2js-preprocessor": "^0.2.1",
     "karma-phantomjs-launcher": "^1.0.0",
+    "mocha": "^2.4.5",
     "phantomjs": "^2.1.3",
     "phantomjs-prebuilt": "^2.1.4",
     "watchify": "^3.7.0"
